@@ -87,7 +87,6 @@ ProcessBillingStatement.ps1
 # Teams kanavan konfigurointi (web hook)
 1. Luo valitsemaasi Teams ryhmään kanava jonne haluat viestit lähettää
 2. Valitse kanava ja kanavan valikosta Connectors
-
 ![image](https://user-images.githubusercontent.com/69797126/126136267-83d34aa4-ac98-43a1-a763-762cef210d3d.png)
 3. Etsi valikosta Incoming WebHook connector ja paina Add ja toisen kerran Add
 ![image](https://user-images.githubusercontent.com/69797126/126136563-36a2044f-6a83-4346-9040-7e959f0a35b8.png)
