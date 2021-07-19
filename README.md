@@ -22,17 +22,41 @@ ProcessBillingStatement.ps1
 3. Tarvitset Azure tilauksen johon luodaan Azure funktiot sekä Table Storage
 4. Jatkokehityksessä suosittelen https://www.postman.com/ työkalua API rajapinnan testaamiseen
 
-# Azure valmistelut
+# Azure Funktioiden luominen
 1. Luodaan Azure funktio palvelu
 
 **Funktiot rakennetaan powershell pohjalle. Huomio että funktion nimi pitää olla uniikki!**
-![image](https://user-images.githubusercontent.com/69797126/126117856-08b1ffbe-f6dc-4d85-af09-50d152341be3.png)
+![image](https://user-images.githubusercontent.com/69797126/126118522-422cd17b-de4f-4362-adab-7c5d8d88f3a4.png)
 
-**Funktio voi oll serverless pohjainen**
-![image](https://user-images.githubusercontent.com/69797126/126117870-012772cc-967c-4106-9587-158cc24372a5.png)
+**Funktio voi olla serverless pohjainen**
+![image](https://user-images.githubusercontent.com/69797126/126118651-6bd93753-d9c7-4f5c-8f1f-761abd27c3b4.png)
 
 **Suositeltavaa enabloida application insights debuggausta varten**
-![image](https://user-images.githubusercontent.com/69797126/126117877-9ed00950-c196-4226-bc64-7e15c32193e6.png)
+![image](https://user-images.githubusercontent.com/69797126/126118721-d5473ea6-3c50-49f3-b519-995aaba50430.png)
 
+2. Luodaan itse funktiot
 
+![image](https://user-images.githubusercontent.com/69797126/126119330-f22d2b6a-79ee-438f-b414-34a25b50597f.png)
+
+**Luodaan GetAzureBillingDetails joka ajastetaan suorittamaan joka kuukauden 10 päivä**
+![image](https://user-images.githubusercontent.com/69797126/126119880-3a08bd82-76ff-4e46-8f22-1543f3167dcd.png)
+
+**Luodaan ProcessBillingStatement joka suoritetaan HTTP triggerin avulla**
+
+![image](https://user-images.githubusercontent.com/69797126/126120311-1fe4cdfb-b81c-4261-9632-80fbc78bde8d.png)
+
+**Tuloksena 2 Azure funktiota. Toinen Timer- ja toinen HTTP-triggeillä**
+![image](https://user-images.githubusercontent.com/69797126/126120483-962b9131-ca5e-4cf7-a3d6-bb39ea5d831a.png)
+
+# Azure Table Storage luominen
+1. Luodaan uusi taulu samaan storage accountiin minkä Azure funktio loi meille
+
+![image](https://user-images.githubusercontent.com/69797126/126121443-89211616-11e0-4fcc-9c14-a09770343934.png)
+
+**Luodaan uusi taulu nimeltään MyreferenceData**
+
+![image](https://user-images.githubusercontent.com/69797126/126121296-af90d51a-49d9-412d-89da-6015908f60f9.png)
+
+**Taulukon dataa voi tutkia suoraan portaalista tai Azure Storage Explorer ohjelmalla (https://azure.microsoft.com/en-us/features/storage-explorer/)**
+![image](https://user-images.githubusercontent.com/69797126/126121889-a483f054-52f2-466a-8845-c6f41fce72a1.png)
 
