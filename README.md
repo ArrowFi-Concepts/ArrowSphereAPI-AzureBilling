@@ -104,4 +104,42 @@ ProcessBillingStatement.ps1
 
 
 # Azure funktio skriptin sisältö
-1. 
+1. Kopioi MyGetAzureBillingDetails.ps1 sisältö siihen varattuun Azure funktioon
+
+**Muuta seuraavat muuttujat ja tallenna**
+#My table name
+$tblName='CHANGE-TO-YOUR-TABLE-NAME'
+#My Shared Access Signature #e.g. ?sv=2020-08-04&ss=...... 
+$tblSAS='CHANGE-TO-YOUR-SAS'
+#Table Storage Account FQDN e.g. https://arrowsphereapi.table.core.windows.net/ 
+$storAcc = 'CHANGE-TO-YOUR-StorageAccountName'
+
+#My HTTP Trigger URL
+$TriggerURL = 'CHANGE-TO-YOUR-Trigger-URL'
+
+$headers = @{
+'Content-Type' = 'application/json'
+'apikey' = 'CHANGE-TO-YOUR-APIKEY'
+'Accept' = 'application/json'
+}
+
+![image](https://user-images.githubusercontent.com/69797126/126142839-3f8439a3-c077-48a4-9e2c-e0291313d5e7.png)
+![image](https://user-images.githubusercontent.com/69797126/126143623-e7ca88d9-ec94-4a0f-9c12-3992c6bbf3aa.png)
+
+2. Kopioi MyProcessBillingStatement.ps1 sisältö siihen varattuun Azure funktioon
+**Muuta seuraavat muuttujat ja tallenna**
+##My Code
+#Teams Webhook URL
+$TeamsWebHookURL = 'CHANGE-TO-YOUR-WEB-HOOK-URL'
+![image](https://user-images.githubusercontent.com/69797126/126144084-686f3fe1-4daf-4eec-a52a-603e3ec4ee9d.png)
+
+# Projektin testaaminen
+**Aja MyGetAzureBillingDetails Test/Run -> Run**
+![image](https://user-images.githubusercontent.com/69797126/126144822-81801e6f-c369-499b-9c43-b77d0a5a53d6.png)
+![image](https://user-images.githubusercontent.com/69797126/126144769-cac96f6b-7d20-4ef9-96b4-ab34effffba3.png)
+![image](https://user-images.githubusercontent.com/69797126/126145045-a78b6be5-b1d1-474c-a80f-80eb6ca9bab1.png)
+![image](https://user-images.githubusercontent.com/69797126/126145428-1fc79839-02a7-4235-a28c-9e65cc4097e4.png)
+**Check that the functions are running and see if there are any error and check your code**
+![image](https://user-images.githubusercontent.com/69797126/126145693-48087fcf-818b-4724-8911-a0e51126edbf.png)
+
+
