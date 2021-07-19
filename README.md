@@ -108,29 +108,17 @@ ProcessBillingStatement.ps1
 1. Kopioi MyGetAzureBillingDetails.ps1 sisältö siihen varattuun Azure funktioon
 
 **Muuta seuraavat muuttujat ja tallenna**
-#My table name
 $tblName='CHANGE-TO-YOUR-TABLE-NAME'
-#My Shared Access Signature #e.g. ?sv=2020-08-04&ss=...... 
 $tblSAS='CHANGE-TO-YOUR-SAS'
-#Table Storage Account FQDN e.g. https://arrowsphereapi.table.core.windows.net/ 
 $storAcc = 'CHANGE-TO-YOUR-StorageAccountName'
-
-#My HTTP Trigger URL
 $TriggerURL = 'CHANGE-TO-YOUR-Trigger-URL'
-
-$headers = @{
-'Content-Type' = 'application/json'
 'apikey' = 'CHANGE-TO-YOUR-APIKEY'
-'Accept' = 'application/json'
-}
 
 ![image](https://user-images.githubusercontent.com/69797126/126142839-3f8439a3-c077-48a4-9e2c-e0291313d5e7.png)
 ![image](https://user-images.githubusercontent.com/69797126/126143623-e7ca88d9-ec94-4a0f-9c12-3992c6bbf3aa.png)
 
 2. Kopioi MyProcessBillingStatement.ps1 sisältö siihen varattuun Azure funktioon
 **Muuta seuraavat muuttujat ja tallenna**
-##My Code
-#Teams Webhook URL
 $TeamsWebHookURL = 'CHANGE-TO-YOUR-WEB-HOOK-URL'
 ![image](https://user-images.githubusercontent.com/69797126/126144084-686f3fe1-4daf-4eec-a52a-603e3ec4ee9d.png)
 
