@@ -14,7 +14,7 @@ ProcessBillingStatement.ps1
   - Kun ArrowSphere palauttaa laskutusdatan yksityiskohdat niin tämä funktio käsittelee ne.
   - Referenssikoodin avulla laskutus yhdistetään asiakkaaseen ja tieto lähetetään Teams kanavalle.
 
-![image](https://user-images.githubusercontent.com/69797126/126116597-cd893c60-fad8-4f1b-b46a-d9a661b8546a.png)
+![image](https://user-images.githubusercontent.com/69797126/126157147-2add877b-5b2d-4ec8-bce4-d9ecc2c88abc.png)
 
 # Valmistelut
 1. Tarvitset ArrowSphere tunnuksen jolla on oikeus luoda API avaimia https://xsp.arrow.com/
