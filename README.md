@@ -79,7 +79,29 @@ ProcessBillingStatement.ps1
 ![image](https://user-images.githubusercontent.com/69797126/126128865-ba4280e0-1f25-43fb-83d7-9139e9411d62.png)
 ![image](https://user-images.githubusercontent.com/69797126/126128991-b11e98bd-c21f-47fb-8468-df5e77b114ae.png)
 
+# HTTP Trigger osoitteen taltiointi
+**Etsi funktio MyProcessBillingStatement ja kopioi talteen HTTP triggerin osoite**
+![image](https://user-images.githubusercontent.com/69797126/126140101-ebd01b70-d7de-420b-83ab-57bd4f3c5f50.png)
 
 
+# Teams kanavan konfigurointi (web hook)
+1. Luo valitsemaasi Teams ryhmään kanava jonne haluat viestit lähettää
+2. Valitse kanava ja kanavan valikosta Connectors
+![image](https://user-images.githubusercontent.com/69797126/126136267-83d34aa4-ac98-43a1-a763-762cef210d3d.png)
+3. Etsi valikosta Incoming WebHook connector ja paina Add ja toisen kerran Add
+![image](https://user-images.githubusercontent.com/69797126/126136563-36a2044f-6a83-4346-9040-7e959f0a35b8.png)
+4. Lisäämisen jälkeen valitse Incoming WebHook connector ja valitse configure
+**Anna connectorille nimi ja kuvake ja paina create**
+![image](https://user-images.githubusercontent.com/69797126/126137262-e9ea57cb-bb5b-4587-946a-1ebcdd86378f.png)
+5. Kopioi talteen connector URL ja paina done
+![image](https://user-images.githubusercontent.com/69797126/126137596-ae38c5a2-80ee-4863-803a-8ab0cc146ba4.png)
+
+# Azure Table Storage Shared Access Signature avaimen luonti
+1. Mene luotuun storage accountiin ja luo table storagea varten Shared Access Signature jolla voidaan poistaa vanhoja merkintöjä. (Azure funktio ei tue tätä vielä)
+![image](https://user-images.githubusercontent.com/69797126/126139085-09102df8-2d77-44a6-9660-3c7cac62e2cb.png)
+2. Paina Generate SAS and connection string ja ota talteen kaikki, erityisesti SAS Token
+![image](https://user-images.githubusercontent.com/69797126/126139278-7560772c-9e67-4b35-923c-6ec607be3d1f.png)
 
 
+# Azure funktio skriptin sisältö
+1. 
