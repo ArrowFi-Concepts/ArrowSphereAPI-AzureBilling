@@ -86,7 +86,7 @@ ProcessBillingStatement.ps1
 
 # Teams kanavan konfigurointi (web hook)
 1. Luo valitsemaasi Teams ryhmään kanava jonne haluat viestit lähettää
-2. Valitse kanava ja kanavan valikosta Connectors
+3. Valitse kanava ja kanavan valikosta Connectors
 ![image](https://user-images.githubusercontent.com/69797126/126136267-83d34aa4-ac98-43a1-a763-762cef210d3d.png)
 3. Etsi valikosta Incoming WebHook connector ja paina Add ja toisen kerran Add
 ![image](https://user-images.githubusercontent.com/69797126/126136563-36a2044f-6a83-4346-9040-7e959f0a35b8.png)
@@ -98,6 +98,7 @@ ProcessBillingStatement.ps1
 
 # Azure Table Storage Shared Access Signature avaimen luonti
 1. Mene luotuun storage accountiin ja luo table storagea varten Shared Access Signature jolla voidaan poistaa vanhoja merkintöjä. (Azure funktio ei tue tätä vielä)
+**HUOM! Muuta voimassaoloaika! Esim 10 vuotta.**
 ![image](https://user-images.githubusercontent.com/69797126/126139085-09102df8-2d77-44a6-9660-3c7cac62e2cb.png)
 2. Paina Generate SAS and connection string ja ota talteen kaikki, erityisesti SAS Token
 ![image](https://user-images.githubusercontent.com/69797126/126139278-7560772c-9e67-4b35-923c-6ec607be3d1f.png)
@@ -107,17 +108,24 @@ ProcessBillingStatement.ps1
 1. Kopioi MyGetAzureBillingDetails.ps1 sisältö siihen varattuun Azure funktioon
 
 **Muuta seuraavat muuttujat ja tallenna**
+
 $tblName='CHANGE-TO-YOUR-TABLE-NAME'
+
 $tblSAS='CHANGE-TO-YOUR-SAS'
+
 $storAcc = 'CHANGE-TO-YOUR-StorageAccountName'
+
 $TriggerURL = 'CHANGE-TO-YOUR-Trigger-URL'
+
 'apikey' = 'CHANGE-TO-YOUR-APIKEY'
 
 ![image](https://user-images.githubusercontent.com/69797126/126142839-3f8439a3-c077-48a4-9e2c-e0291313d5e7.png)
 ![image](https://user-images.githubusercontent.com/69797126/126143623-e7ca88d9-ec94-4a0f-9c12-3992c6bbf3aa.png)
 
 2. Kopioi MyProcessBillingStatement.ps1 sisältö siihen varattuun Azure funktioon
+
 **Muuta seuraavat muuttujat ja tallenna**
+
 $TeamsWebHookURL = 'CHANGE-TO-YOUR-WEB-HOOK-URL'
 ![image](https://user-images.githubusercontent.com/69797126/126144084-686f3fe1-4daf-4eec-a52a-603e3ec4ee9d.png)
 
@@ -127,7 +135,7 @@ $TeamsWebHookURL = 'CHANGE-TO-YOUR-WEB-HOOK-URL'
 ![image](https://user-images.githubusercontent.com/69797126/126144769-cac96f6b-7d20-4ef9-96b4-ab34effffba3.png)
 ![image](https://user-images.githubusercontent.com/69797126/126145045-a78b6be5-b1d1-474c-a80f-80eb6ca9bab1.png)
 ![image](https://user-images.githubusercontent.com/69797126/126145428-1fc79839-02a7-4235-a28c-9e65cc4097e4.png)
-**Check that the functions are running and see if there are any error and check your code**
+**Tarkista että funktiot käynnistyvät ja mitään virheilmoituksia ei esiinny ajon aikana**
 ![image](https://user-images.githubusercontent.com/69797126/126145693-48087fcf-818b-4724-8911-a0e51126edbf.png)
 
 
