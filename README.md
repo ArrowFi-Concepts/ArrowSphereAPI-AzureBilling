@@ -68,6 +68,7 @@ ProcessBillingStatement.ps1
 **Täällä on myös meidän luoma MyreferenceData taulu johon funktioilla on pääsy kunhan se konfiguroidaan funktioiden sisään- ja/tai ulostulomuuttujiksi**
 
 **Lisätään MyGetAzureBillingDetails ulostulomuuttujaksi MyreferenceData taulu (Add Output)**
+
 ![image](https://user-images.githubusercontent.com/69797126/126126590-08e3bda6-6589-453d-8adb-5313db2a9eb0.png)
 **Huomioi oletusmuuttujan nimen muutos outputTable -> outputToTable (koska koodissa käytetään tätä nimeä)**
 **Käytetään muuttujaa jossa access key storage accountiin**
@@ -89,6 +90,7 @@ ProcessBillingStatement.ps1
 2. Valitse kanava ja kanavan valikosta Connectors
 
 ![image](https://user-images.githubusercontent.com/69797126/126136267-83d34aa4-ac98-43a1-a763-762cef210d3d.png)
+
 3. Etsi valikosta Incoming WebHook connector ja paina Add ja toisen kerran Add
 ![image](https://user-images.githubusercontent.com/69797126/126136563-36a2044f-6a83-4346-9040-7e959f0a35b8.png)
 4. Lisäämisen jälkeen valitse Incoming WebHook connector ja valitse configure
@@ -116,9 +118,9 @@ $tblSAS='CHANGE-TO-YOUR-SAS'  #(esim. ?sv=...)
 
 $storAcc = 'CHANGE-TO-YOUR-StorageAccountName'  #(esim. https://myxspapiteststorage.table.core.windows.net/)
 
-$TriggerURL = 'CHANGE-TO-YOUR-Trigger-URL' #(esim. https://my-xsp-api-test.azurewebsites.net/api/MyProcessBillingStatement?code=yDk...)
+$TriggerURL = 'CHANGE-TO-YOUR-Trigger-URL' #(esim. https://my-xsp-api-test.azurewebsites.net/api/MyProce...)
 
-'apikey' = 'CHANGE-TO-YOUR-APIKEY' #(esim. yh7...)
+'apikey' = 'CHANGE-TO-YOUR-APIKEY' #(esim. yh7soYlaLHsd53...)
 
 ![image](https://user-images.githubusercontent.com/69797126/126142839-3f8439a3-c077-48a4-9e2c-e0291313d5e7.png)
 ![image](https://user-images.githubusercontent.com/69797126/126143623-e7ca88d9-ec94-4a0f-9c12-3992c6bbf3aa.png)
@@ -127,19 +129,22 @@ $TriggerURL = 'CHANGE-TO-YOUR-Trigger-URL' #(esim. https://my-xsp-api-test.azure
 
 **Muuta seuraavat muuttujat ja tallenna**
 
-$TeamsWebHookURL = 'CHANGE-TO-YOUR-WEB-HOOK-URL' #(esim. https://arrow.webhook.office.com/webhookb2/cae...)
+$TeamsWebHookURL = 'CHANGE-TO-YOUR-WEB-HOOK-URL' #(esim. https://arrow.webhook.office.com/webh...)
 ![image](https://user-images.githubusercontent.com/69797126/126144084-686f3fe1-4daf-4eec-a52a-603e3ec4ee9d.png)
 
 # Projektin testaaminen
 **Aja MyGetAzureBillingDetails Test/Run -> Run**
+
 ![image](https://user-images.githubusercontent.com/69797126/126144822-81801e6f-c369-499b-9c43-b77d0a5a53d6.png)
+
 **Funktio ei tarvitse mitään inputtia**
+
 ![image](https://user-images.githubusercontent.com/69797126/126144769-cac96f6b-7d20-4ef9-96b4-ab34effffba3.png)
 **Funktio logiin pitäisi alkaa tulla merkintöjä**
 ![image](https://user-images.githubusercontent.com/69797126/126145045-a78b6be5-b1d1-474c-a80f-80eb6ca9bab1.png)
 **Table storage alkaa täyttyä arvoista**
 ![image](https://user-images.githubusercontent.com/69797126/126145428-1fc79839-02a7-4235-a28c-9e65cc4097e4.png)
-**Jonkin ajan kuluttua ensimmäisen skriptin ajosta pitäisi process skriptiin tulla ajoja jotka prosessoivat laskutustietoja**
+**Jonkin ajan kuluttua ensimmäisen skriptin ajosta pitäisi process skriptiin tulla ajoja jotka prosessoivat laskutustietoja.**
 **Tarkista että funktiot käynnistyvät ja mitään virheilmoituksia ei esiinny ajon aikana**
 ![image](https://user-images.githubusercontent.com/69797126/126145693-48087fcf-818b-4724-8911-a0e51126edbf.png)
 **Jos kaikki toimii niin määritellylle Teams kanavalle alkaa ilmestyä viestejä**
