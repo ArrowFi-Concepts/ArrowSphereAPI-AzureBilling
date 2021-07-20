@@ -25,7 +25,9 @@ foreach($row in $inputTable){
         $message += "Link to Details: " + $Request.Body.link + "<br>"
         $message += "Link Expiration: " + $Request.Body.linkExpirationDate + "<br>"
     }
-
+    if($message -eq $null){
+        $message += "Reference code not found"
+    }
 }
 #Send Message
 $URI=$TeamsWebHookURL
