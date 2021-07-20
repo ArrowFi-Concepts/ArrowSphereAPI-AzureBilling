@@ -1,18 +1,18 @@
 # ArrowSphereAPI
 Tässä Git Repossa on esimerkki miten voit hyödyntää laskutusdataa ArrowSphere järjestelmästä.
-Laskutusdataa saa ArrowSpherestä erilaisilla tavoilla ja tässä esimerkissä rakennettu yksi malli.
+Laskutusdataa saa ArrowSpherestä erilaisilla tavoilla ja tässä esimerkissä on rakennettu yksi malli.
 Mallissa rakennetaan kaksi Azure funktiota jotka tekevät seuraavia asioita:
 
 GetAzureBillingDetails.ps1
   - Käy läpi kaikki asiakkaat ja listaa asiakkaiden Azure lisenssit (Huom. Azure Plan vs Azure Legazy)
   - Jokaista lisenssiä vasten haetaan edellisen kuukauden kulutus ja tehdään pyyntö ArrowSphereen kulutuksen yksityikohdista (Excel-tiedosto)
-  - Kulutuspyynnöstä saadaan referenssi koodi joka tallennetaan asiakas- ja lisenssitiedon kanssa Azure aTable Storageeen
-  - Azure funktio ajetaan esim joka kuukauden 10. päivä tai kunnes laskutusdata on saatavilla (TimeTrigger)
+  - Kulutuspyynnöstä saadaan referenssi koodi joka tallennetaan asiakas- ja lisenssitiedon kanssa Azure Table Storageen
+  - Azure funktio ajetaan esim. joka kuukauden 10. päivä tai kunnes laskutusdata on saatavilla (TimeTrigger)
 
 ProcessBillingStatement.ps1
-  - Azure funktio kuuntelee HTTP-triggeriä
+  - Azure funktio odottaa HTTP-triggeriä
   - Kun ArrowSphere palauttaa laskutusdatan yksityiskohdat niin tämä funktio käsittelee ne.
-  - Referenssikoodin avulla laskutus yhdistetään asiakkaaseen ja tieto lähetetään Teams kanavalle.
+  - Referenssikoodin avulla laskutusdata yhdistetään asiakkaaseen ja tieto lähetetään Teams kanavalle.
 
 ![image](https://user-images.githubusercontent.com/69797126/126157147-2add877b-5b2d-4ec8-bce4-d9ecc2c88abc.png)
 
@@ -76,7 +76,7 @@ ProcessBillingStatement.ps1
 
 **Lisätään MyProcessBillingStatement sisääntulo-muuttujaksi MyreferenceData taulu (Add Input)**
 ![image](https://user-images.githubusercontent.com/69797126/126129287-629e7bc7-9742-42a0-91bc-6b2c7cd65fa0.png)
-![image](https://user-images.githubusercontent.com/69797126/126128865-ba4280e0-1f25-43fb-83d7-9139e9411d62.png)
+![image](https://user-images.githubusercontent.com/69797126/126303890-233a2d11-2221-454b-a0be-5a1b37a546db.png)
 ![image](https://user-images.githubusercontent.com/69797126/126128991-b11e98bd-c21f-47fb-8468-df5e77b114ae.png)
 
 # HTTP Trigger osoitteen taltiointi
